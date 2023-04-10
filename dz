@@ -1,0 +1,39 @@
+#include <iostream>
+
+class Food {
+public:
+    virtual void prepare() = 0;
+};
+
+class Breakfast : public Food {
+public:
+    void prepare() override {
+        std::cout << "Preparing breakfast..." << std::endl;
+        // Implement breakfast preparation logic here...
+    }
+};
+
+class Lunch : public Food {
+public:
+    void prepare() override {
+        std::cout << "Preparing lunch..." << std::endl;
+        // Implement lunch preparation logic here...
+    }
+};
+
+class Dinner : public Food {
+public:
+    void prepare() override {
+        std::cout << "Preparing dinner..." << std::endl;
+        // Implement dinner preparation logic here...
+    }
+};
+
+class Person {
+public:
+    void eat(Food& food) {
+        food.prepare();
+        std::cout << "Eating " << typeid(food).name() << "..." << std::endl;
+        // Implement eating logic here...
+    }
+};
